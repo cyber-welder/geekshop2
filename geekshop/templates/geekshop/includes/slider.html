@@ -1,0 +1,18 @@
+<div class="slider">
+
+    {% include 'geekshop/includes/inc_main_menu.html' %}
+
+			<div class="text-slider">
+				<h3 class="green">тенденции {% now "Y" %}</h3>
+                {% if user.is_authenticated %}
+				    <h3 class="big"> удобные стулья</h3>
+                {% else %}
+                    <h3 class="big"> закончились стулья</h3>
+                {% endif %}
+				<p>Новый уровень комфорта. Отличные характеристики.</p>
+				<a href="#" class="button-order">заказать <img src="img/arrow.png" alt=""></a>
+			</div>
+			<div class="navi">
+				<a href="#"></a><a href="#"></a><a href="#"></a>
+			</div>
+		</div>
