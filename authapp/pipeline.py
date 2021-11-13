@@ -1,12 +1,12 @@
 from collections import OrderedDict
 from datetime import datetime
 from urllib.parse import urlencode, urlunparse
-
-import requests
 from django.utils import timezone
 from social_core.exceptions import AuthForbidden
+import requests
 
 from authapp.models import ShopUserProfile
+from geekshop import settings
 
 
 def save_user_profile(backend, user, response, *args, **kwargs):
@@ -41,5 +41,18 @@ def save_user_profile(backend, user, response, *args, **kwargs):
         if age < 18:
             user.delete()
             raise AuthForbidden('social_core.backend.vk.VKOAuth2')
+        else:
+            user.age = age
+
+    if response['email']:
+        user.email = response['email']
+
+    if response['photo']:
+        avatar_name = response['photo'].split('/')[-1]
+        avatar_path = 'users_avatars/' + avatar_name
+        with open(settings.MEDIA_URL[1:] + avatar_path, 'wb') as f:
+            f.write(requests.get(response['photo']).content)
+
+        user.avatar = avatar_path
 
     user.save()

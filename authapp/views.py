@@ -10,7 +10,7 @@ from authapp.models import ShopUser
 
 
 def login(request):
-    title = 'вход'
+    title = 'Вход'
 
     login_form = ShopUserLoginForm(data=request.POST or None)
 
@@ -43,7 +43,7 @@ def logout(request):
 
 
 def register(request):
-    title = 'регистрация'
+    title = 'Регистрация'
 
     if request.method == 'POST':
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
@@ -69,9 +69,7 @@ def register(request):
 
 @transaction.atomic
 def edit(request):
-    title = 'редактирование'
-
-    title = 'редактирование'
+    title = 'Редактирование'
 
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
