@@ -16,10 +16,15 @@
             Зарегистрироваться
         </a>
     </button>
-    <button class="btn btn-round form-control">
-        <a href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
-         Вход через ВКонтакте
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+            <i class="fa fa-vk" aria-hidden="true"></i>
+            Вход через ВКонтакте
         </a>
-    </button>
 
+        <a class="btn btn-success" href="{% url 'social:begin' 'github' %}?next=/">
+            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+            Вход через GitHub
+        </a>
+    </div>
 {% endblock %}
