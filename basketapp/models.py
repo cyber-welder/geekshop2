@@ -22,6 +22,10 @@ class Basket(models.Model):
 
     is_active = models.BooleanField(verbose_name='активна', default=True)
 
+    @staticmethod
+    def get_items(user):
+        return Basket.objects.filter(user=user)
+
     @property
     def product_cost(self):
         return self.product.price * self.quantity
