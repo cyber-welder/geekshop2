@@ -1,0 +1,29 @@
+[
+  {
+      "category": "Стулья",
+      "name": "Удобный стул",
+      "image": "products_images/product-2.jpg",
+      "short_desc": "",
+      "description": "egrt",
+      "price": "2500.00",
+      "quantity": 100
+  },
+  {
+      "category": "Офис",
+      "name": "Лампа сфера",
+      "image": "products_images/product-1.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "dfgdgf",
+      "price": "1500.00",
+      "quantity": 5
+  },
+  {
+      "category": "Офис",
+      "name": "Диван серый",
+      "image": "products_images/product-3-sm.jpg",
+      "short_desc": "Уникальный дизайн",
+      "description": "Серый лучший цвет 34",
+      "price": "13500.00",
+      "quantity": 10
+  }
+]
