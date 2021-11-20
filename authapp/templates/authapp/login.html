@@ -2,6 +2,7 @@
 
 {% load static %}
 {% block content %}
+
     <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
         {% csrf_token %}
         {% if next %}
@@ -12,7 +13,18 @@
     </form>
     <button class="btn btn-round form-control">
         <a href="{% url 'auth:register' %}" class="">
-            зарегистрироваться
+            Зарегистрироваться
         </a>
     </button>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{% url 'social:begin' 'vk-oauth2' %}?next=/">
+            <i class="fa fa-vk" aria-hidden="true"></i>
+            Вход через ВКонтакте
+        </a>
+
+        <a class="btn btn-success" href="{% url 'social:begin' 'github' %}?next=/">
+            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
+            Вход через GitHub
+        </a>
+    </div>
 {% endblock %}
