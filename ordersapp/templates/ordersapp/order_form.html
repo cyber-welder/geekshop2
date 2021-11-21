@@ -1,6 +1,12 @@
 {% extends "geekshop/base.html" %}
 {% load static %}
 
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'ordersapp/js/script.js' %}"></script>
+    <script src="{% static 'ordersapp/js/jquery.formset.js' %}"></script>
+{% endblock %}
+
 {% block content %}
    {% include 'ordersapp/includes/inc_order_summary.html' %}
    <div class="order_form">
@@ -22,17 +28,26 @@
                        </thead>
                    {% endif %}
                    <tr class="formset_row">
-                       {% for field in form.visible_fields %}
-                           <td class="{% cycle 'td1' 'td2' 'td3' %} order formset_td">
-                               {% if forloop.first %}
-                                   {% for hidden in form.hidden_fields %}
-                                       {{ hidden }}
-                                   {% endfor %}
-                               {% endif %}
-                               {{ field.errors.as_ul }}
-                               {{ field }}
-                           </td>
-                       {% endfor %}
+                        {% for field in form.visible_fields %}
+                            <td class="{% cycle 'td1' 'td2' 'td3' %} order formset_td">
+                                {% if forloop.first %}
+                                    {% for hidden in form.hidden_fields %}
+                                        {{ hidden }}
+                                    {% endfor %}
+                                {% endif %}
+                                {{ field.errors.as_ul }}
+                                {% if field.name != 'price' %}
+                                    {{ field }}
+                                {% else %}
+                                    {% if field.value %}
+                                        <span class="orderitems-{{ forloop.parentloop.counter0 }}-price">
+                                                 {{ field.value }}
+                                               </span> руб
+                                    {% endif %}
+                                {% endif %}
+
+                            </td>
+                        {% endfor %}
                    </tr>
                {% endfor %}
            </table>
