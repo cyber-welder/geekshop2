@@ -10,21 +10,24 @@
             </li>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li>
-                    <a class="dropdown-item" href="{% url 'auth:edit' %}">Профиль</a>
+                    <a class="dropdown-item" href="{% url 'auth:edit' %}">
+                        Профиль</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{% url 'orders:main' %}">
+                        Заказы</a>
                 </li>
                 {% if user.is_superuser %}
-                    <li>
-                        <a class="dropdown-item" href="{% url 'admin_staff:users' %}">Админка</a>
+                    <li><a class="dropdown-item" href="{% url 'admin_staff:users' %}">Админка</a>
                     </li>
                 {% endif %}
                 {% if basket %}
-                    <li>
-                        <a class="dropdown-item" href="{% url 'basket:view' %}">Корзина</a>
+                    <li><a class="dropdown-item" href="{% url 'basket:view' %}">Корзина</a>
                     </li>
                 {% endif %}
                     <li>
                         {% if user.is_authenticated %}
-                            <a href="{% url 'auth:logout' %}">Выйти</a>
+                            <a href="{% url 'auth:logout' %}">выйти</a>
                         {% endif %}
                     </li>
             </ul>
