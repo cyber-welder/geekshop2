@@ -1,8 +1,11 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
+import random
+from django.conf import settings
+from django.core.cache import cache
+from django.views.decorators.cache import never_cache, cache_page
 
 from mainapp.models import ProductCategory, Product
-import random
 
 
 def get_hot_product():
@@ -15,6 +18,7 @@ def get_same_products(hot_product):
     return same_products
 
 
+@never_cache
 def products(request, pk=None, page=1):
     title = 'Каталог'
 
@@ -63,6 +67,7 @@ def products(request, pk=None, page=1):
     return render(request, 'mainapp/products.html', context)
 
 
+@never_cache
 def product(request, pk):
     title = 'Детали'
 
