@@ -1,0 +1,145 @@
+[
+  {
+    "model": "sessions.session",
+    "pk": "nyn4juaqk72nk1ny7ha5l9djtawy1gyf",
+    "fields": {
+      "session_data": ".eJxVjDsOwyAQRO9CHSHA5pcyvc-AYHcJTiKQjF1FuXtsyUVSzrw382YhbmsJW6clzMiuTLLLb5ciPKkeAB-x3huHVtdlTvxQ-Ek7nxrS63a6fwcl9rKvvVSgFVGWoyBPJqPX1kuDFqWLNDit9kxGCiQ3CO9IW0ALMaU8Kg3s8wXa4Tfx:1mtRpg:XtvQbUQxJlmMHloW4tq-u5NkVDDN5hBNAXty_lWWkvM",
+      "expire_date": "2021-12-18T09:59:52.572Z"
+    }
+  },
+  {
+    "model": "authapp.shopuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$XjS4L1ktfWBQ0kG7Bd07Dn$c4D5wp4ruTHt3VJTthscBKa5uqZlbbX5QP+lbT8q2Us=",
+      "last_login": "2021-12-04T09:59:52.387Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@geekshop.local",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-12-04T09:58:52.012Z",
+      "avatar": "",
+      "age": 30,
+      "activation_key": "",
+      "activation_key_expires": "2021-12-06T09:58:50.691Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "authapp.shopuserprofile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "tagline": "",
+      "about_me": "",
+      "gender": ""
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Стулья",
+      "description": "",
+      "created": "2021-12-04T09:58:51.216Z",
+      "updated": "2021-12-04T09:58:51.216Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Дом",
+      "description": "",
+      "created": "2021-12-04T09:58:51.292Z",
+      "updated": "2021-12-04T09:58:51.292Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Офис",
+      "description": "",
+      "created": "2021-12-04T09:58:51.400Z",
+      "updated": "2021-12-04T09:58:51.400Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Модерн",
+      "description": "",
+      "created": "2021-12-04T09:58:51.496Z",
+      "updated": "2021-12-04T09:58:51.496Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Классика",
+      "description": "",
+      "created": "2021-12-04T09:58:51.632Z",
+      "updated": "2021-12-04T09:58:51.632Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Удобный стул",
+      "image": "products_images/product-2.jpg",
+      "short_desc": "",
+      "description": "egrt",
+      "price": "2500.00",
+      "quantity": 100,
+      "created": "2021-12-04T09:58:51.763Z",
+      "updated": "2021-12-04T09:58:51.763Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 3,
+      "name": "Лампа сфера",
+      "image": "products_images/product-1.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "dfgdgf",
+      "price": "1500.00",
+      "quantity": 5,
+      "created": "2021-12-04T09:58:51.844Z",
+      "updated": "2021-12-04T09:58:51.844Z",
+      "is_active": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 3,
+      "name": "Диван серый",
+      "image": "products_images/product-3-sm.jpg",
+      "short_desc": "Уникальный дизайн",
+      "description": "Серый лучший цвет 34",
+      "price": "13500.00",
+      "quantity": 10,
+      "created": "2021-12-04T09:58:51.928Z",
+      "updated": "2021-12-04T09:58:51.928Z",
+      "is_active": true
+    }
+  }
+]
